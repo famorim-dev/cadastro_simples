@@ -1,0 +1,8 @@
+# Ambientes virtuais
+venv/
+.env
+
+#django
+__pycache__/
+db.sqlite3
+static/
