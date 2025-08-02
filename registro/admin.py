@@ -7,3 +7,8 @@ class registroAdmin(admin.ModelAdmin):
     ordering = '-id',
     list_filter = 'data_criacao',
     search_fields = 'id', 'nome', 'sobrenome', 'telefone', 
+
+@admin.register(models.categoria)
+class categoriaAdmin(admin.ModelAdmin):
+    list_display = 'categoria',
+    orderning = '-id',
