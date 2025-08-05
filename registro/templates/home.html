@@ -5,16 +5,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema de Usuários</title>
     <link rel="stylesheet" href="{% static 'registro.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>home do html</h1>
-    
-    
-        <p>
-            acesse 
-        </p>
-    
-</body>
+    <h1 class="Titulo">Sistema de Usuários</h1>
+    <div class="Main">
+        <div class="list_nome">
+            <h3 class="name_id">Id</h3>
+            <h3>Nome</h3>
+            <h3>Telefone</h3>
+            <h3>Email</h3>
+        </div>
+        <ul class="list_bd">
+        {% for valor in registros %}
+            <li class="list_valor">
+                <div class="valor_id">
+                    <a href="{% url "usuario" valor.id %}">
+                        {{ valor.id }}
+                    </a>
+                </div>
+                <div>{{ valor.nome }}</div>
+                <div>{{ valor.telefone }}</div>
+                <div>{{ valor.email }}</div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>    
+</body> 
 </html>

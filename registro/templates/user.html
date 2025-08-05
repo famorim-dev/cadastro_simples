@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Usuários</title>
+    <link rel="stylesheet" href="{% static 'user.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="Titulo">Usuários</h1>
+    <div class="main">
+        {% for valor in usuarios %}
+        <p>Id: {{valor.id}}</p>
+        <p>Nome: {{valor.nome}}</p>
+        <p>Telefone: {{valor.telefone}}</p>
+        <p>Email: {{valor.email}}</p>
+        {% endfor %}
+    </div>
+</body> 
+</html>
