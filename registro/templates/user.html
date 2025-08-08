@@ -12,18 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
+    {% for valor in usuarios %}
     <header class="header">
-    
         <a class="voltar" href="{% url 'registro' %}">
             voltar
         </a>
 
         <h1 class="Titulo">Usuários</h1>
 
+        <a class="editar_user" href="{% url 'editar' valor.id %}">
+            Editar usuário
+        </a>
     </header>
     
     <div class="main">
-        {% for valor in usuarios %}
+        
         <p>Id: {{valor.id}}</p>
         <p>Nome: {{valor.nome}}</p>
         <p>Sobremome: {{valor.sobrenome}}</p>
@@ -31,7 +34,7 @@
         <p>Email: {{valor.email}}</p>
         <p>Descrição: {{valor.description}}</p>
         <p>Data de Criação: {{valor.data_criacao}}</p>
-        {% endfor %}
+    {% endfor %}
     </div>
 </body> 
 </html>
