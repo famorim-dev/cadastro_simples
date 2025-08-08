@@ -1,16 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criação de Usuários</title>
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="" method="post">
+    <header class="header">
+    
+        <a class="voltar" href="{% url 'registro' %}">
+            voltar
+        </a>
+
+        <h1 class="Titulo">Usuários</h1>
+
+    </header>
+
+    <form action="" method="post" class="form">
         {% csrf_token %}
         <div class="form-group">
             <label for="{{form.name.id_for_label}}">Nome</label>
             {{ form.nome }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{form.sobrenome.id_for_label}}">sobrenome</label>
+            {{ form.sobrenome }}
         </div>
 
         <div class="form-group">
@@ -22,8 +42,13 @@
             <label for="{{form.email.id_for_label}}">email</label>
             {{ form.email }}
         </div>
+        
+        <div class="form-group">
+            <label for="{{form.description.id_for_label}}">description</label>
+            {{ form.description }}
+        </div>
 
-        <button type="submit">Criar</button>
+        <button type="submit" class="button_criar">Criar</button>
     </form>
 </body>
 </html>

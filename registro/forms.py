@@ -4,4 +4,4 @@ from django import forms
 class RegistroForm(forms.ModelForm):
     class Meta:
         model = Registro
-        fields = ('nome', 'telefone', 'email')
+        fields = ('nome', 'sobrenome', 'telefone', 'email', 'description')

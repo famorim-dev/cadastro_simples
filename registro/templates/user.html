@@ -13,12 +13,12 @@
 </head>
 <body>
     <header class="header">
+    
+        <a class="voltar" href="{% url 'registro' %}">
+            voltar
+        </a>
 
-    <a class="voltar" href="{% url 'registro' %}">
-        voltar
-    </a>
-
-    <h1 class="Titulo">Usuários</h1>
+        <h1 class="Titulo">Usuários</h1>
 
     </header>
     
@@ -26,8 +26,11 @@
         {% for valor in usuarios %}
         <p>Id: {{valor.id}}</p>
         <p>Nome: {{valor.nome}}</p>
+        <p>Sobremome: {{valor.sobrenome}}</p>
         <p>Telefone: {{valor.telefone}}</p>
         <p>Email: {{valor.email}}</p>
+        <p>Descrição: {{valor.description}}</p>
+        <p>Data de Criação: {{valor.data_criacao}}</p>
         {% endfor %}
     </div>
 </body> 

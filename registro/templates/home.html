@@ -14,33 +14,35 @@
 <body>
 
     <header class="header">
+        <div class="div_titulo">
+            <img src="{% static "img/logo.png" %}" alt="logo" class="logo">
 
-        <img src="{% static "img/logo.png" %}" alt="logo" class="logo">
+            <a href="{% url 'registro' %}" class="url_titulo">
+                <h3 class="Titulo">Sistema de Usuários</h3>
+            </a>
+        </div>
 
-        <a href="{% url 'registro' %}" class="url_titulo">
-            <h3 class="Titulo">Sistema de Usuários</h3>
-        </a>
-
-        
         <form action="{% url 'search' %}" method="get" class="form">
             <input type="search" name="q" placeholder="Buscar nome..."  id="search" value='{{ request.GET.q }}' class="input">
             <button type="submit" class="buttons_header">Buscar</button>
 
             {%if query%}
-            <a class="limpar" href="{% url 'registro' %}">
-                ✕
-            </a>
+            <div class="div_limpar">
+                <a class="limpar" href="{% url 'registro' %}">
+                    voltar
+                </a>
+            </div>
             {% endif %}
         </form>
         
 
-        <nav>
+        <nav class="nav">
             <a href="">
-
-            </a>
-            <a href="">
-
-            </a>        
+                login
+            </a>  
+            <a href="{% url 'registrar' %}" class="criar_user">
+                <b>Criar Usuário</b>
+            </a>      
         </nav>
 
     </header>
@@ -49,6 +51,7 @@
         <div class="list_nome">
             <h3 class="name_id">Id</h3>
             <h3>Nome</h3>
+            <h3>Sobremome</h3>
             <h3>Telefone</h3>
             <h3>Email</h3>
         </div>
@@ -61,6 +64,7 @@
                     </a>
                 </div>
                 <div>{{ valor.nome }}</div>
+                <div>{{ valor.sobrenome }}</div>
                 <div>{{ valor.telefone }}</div>
                 <div>{{ valor.email }}</div>
             </li>
