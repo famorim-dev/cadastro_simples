@@ -6,13 +6,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Usuários</title>
-    <link rel="stylesheet" href="{% static 'registro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="Titulo">Sistema de Usuários</h1>
+
+    <header class="header">
+
+        <img src="{% static "img/logo.png" %}" alt="logo" class="logo">
+
+        <a href="{% url 'registro' %}" class="url_titulo">
+            <h3 class="Titulo">Sistema de Usuários</h3>
+        </a>
+
+        
+        <form action="{% url 'search' %}" method="get" class="form">
+            <input type="search" name="q" placeholder="Buscar nome..."  id="search" value='{{ request.GET.q }}' class="input">
+            <button type="submit" class="buttons_header">Buscar</button>
+
+            {%if query%}
+            <a class="limpar" href="{% url 'registro' %}">
+                ✕
+            </a>
+            {% endif %}
+        </form>
+        
+
+        <nav>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>        
+        </nav>
+
+    </header>
+
     <div class="Main">
         <div class="list_nome">
             <h3 class="name_id">Id</h3>
@@ -24,7 +56,7 @@
         {% for valor in registros %}
             <li class="list_valor">
                 <div class="valor_id">
-                    <a href="{% url "usuario" valor.id %}">
+                    <a href="{% url "usuario" valor.id %}" class="url_id">
                         {{ valor.id }}
                     </a>
                 </div>

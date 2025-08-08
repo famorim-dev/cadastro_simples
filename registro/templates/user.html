@@ -5,14 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Usuários</title>
-    <link rel="stylesheet" href="{% static 'user.css' %}">
+    <title>Usuário</title>
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header class="header">
+
+    <a class="voltar" href="{% url 'registro' %}">
+        voltar
+    </a>
+
     <h1 class="Titulo">Usuários</h1>
+
+    </header>
+    
     <div class="main">
         {% for valor in usuarios %}
         <p>Id: {{valor.id}}</p>
