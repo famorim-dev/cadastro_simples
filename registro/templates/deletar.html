@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/deletar.css' %}">
+    <title>Deletar Usuário</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Tem certeza que deseja deletar este usuário?</h2>
+
+    <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit">Sim, deletar</button>
+      <a href="{% url 'registro' %}">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

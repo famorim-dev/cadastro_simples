@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuário</title>
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
     {% for valor in usuarios %}
@@ -34,7 +31,11 @@
         <p>Email: {{valor.email}}</p>
         <p>Descrição: {{valor.description}}</p>
         <p>Data de Criação: {{valor.data_criacao}}</p>
-    {% endfor %}
+
+        <a href="{% url 'deletar' valor.id %}" class="btn-deletar">
+            Deletar Usuário
+        </a>
     </div>
+    {% endfor %}
 </body> 
 </html>

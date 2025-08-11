@@ -27,3 +27,12 @@ def editarUsuario(request, id):
         form = RegistroForm(instance=usuario)
     
     return render(request, 'formulario.html', {'form': form})
+
+def deletarUsuario(request, id):
+    usuario = get_object_or_404(Registro, pk=id)
+
+    if request.method == 'POST':
+        usuario.delete()
+        return redirect('registro')
+    
+    return render(request, 'deletar.html', {'usuario': usuario})
