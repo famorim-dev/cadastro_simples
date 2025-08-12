@@ -93,11 +93,13 @@ static/              - arquivos CSS, JS e imagens
 
 Contato
 Felipe Amorim - lipeamorim191@gmail.com
-https://www.linkedin.com/in/felipe-amorim-04a6172a5/
+
+linkedin - https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
 
 
 
