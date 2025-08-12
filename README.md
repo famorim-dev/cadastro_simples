@@ -2,12 +2,16 @@
 
 Este é um projeto **pessoal** em desenvolvimento utilizando **Python**, **Django**, **HTML** e **CSS**. O objetivo principal é criar um sistema web para **registro de usuários**, com funcionalidades básicas de **autenticação**, **edição de cadastros com permissões específicas** e **busca de registros**.
 
-## Funcionalidades (em andamento)
+## Funcionalidades
+Cadastro de usuários (com formulário personalizado)
 
-- Registro de usuários
-- Login autenticado
-- Edição de cadastros (apenas para usuários autorizados)
-- Busca por cadastros de usuários
+Login e logout de usuários
+
+Edição de perfil do usuário logado
+
+Listagem e busca de registros
+
+Controle de acesso para editar/deletar somente os registros do usuário (owner)
 
 ## Tecnologias utilizadas
 
@@ -18,10 +22,80 @@ Este é um projeto **pessoal** em desenvolvimento utilizando **Python**, **Djang
 - **SQLite** (durante o desenvolvimento)
 - **MySQL** (para produção)
 
-## Status do projeto
+Como rodar o projeto localmente
+Pré-requisitos
+Python 3 instalado
 
-🚧 **Projeto em andamento**. Funcionalidades estão sendo implementadas e testadas gradualmente.
+Ambiente virtual (venv)
+
+Git (se for clonar do repositório)
+
+Passos para rodar
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/seu-projeto.git
+cd seu-projeto
+Crie e ative o ambiente virtual:
+
+bash
+Copiar
+Editar
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+Instale as dependências:
+
+bash
+Copiar
+Editar
+pip install -r requirements.txt
+Execute as migrações para criar o banco:
+
+bash
+Copiar
+Editar
+python manage.py migrate
+Crie um superusuário (opcional):
+
+bash
+Copiar
+Editar
+python manage.py createsuperuser
+Rode o servidor de desenvolvimento:
+
+bash
+Copiar
+Editar
+python manage.py runserver
+Acesse no navegador:
+
+cpp
+Copiar
+Editar
+http://127.0.0.1:8000/
+
+
+Estrutura do projeto
+registro/ - app principal
+
+templates/ - arquivos HTML dos templates
+
+forms.py - formulários personalizados
+
+views.py - lógica das páginas
+
+urls.py - rotas do projeto
+
+static/ - arquivos CSS, JS e imagens
+
+Contato
+Felipe Amorim - lipeamorim191@gmail.com
+https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
