@@ -36,26 +36,28 @@ Passos para rodar
 ```bash
 git clone https://github.com/famorim-dev/cadastro_simples.git
 cd cadastro_simples
+```
+
+
 2. Crie e ative o ambiente virtual
+```bash
 No Linux/macOS:
 
-bash
-Copiar
-Editar
 python -m venv venv
 source venv/bin/activate
 No Windows:
 
-bash
-Copiar
-Editar
 python -m venv venv
 venv\Scripts\activate
+
+```
+
 3. Instale as dependências
-bash
-Copiar
-Editar
+
+```bash
 pip install -r requirements.txt
+
+```
 4. Execute as migrações para criar o banco de dados
 bash
 Copiar
@@ -73,7 +75,7 @@ Editar
 python manage.py runserver
 7. Acesse no navegador
 http://127.0.0.1:8000/
-```
+
 
 
 Estrutura do projeto
@@ -96,5 +98,6 @@ https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
 
 
