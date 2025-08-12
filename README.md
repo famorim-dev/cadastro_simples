@@ -2,16 +2,16 @@
 
 Este é um projeto **pessoal** em desenvolvimento utilizando **Python**, **Django**, **HTML** e **CSS**. O objetivo principal é criar um sistema web para **registro de usuários**, com funcionalidades básicas de **autenticação**, **edição de cadastros com permissões específicas** e **busca de registros**.
 
-## Funcionalidades
-Cadastro de usuários (com formulário personalizado)
+Funcionalidades
+Cadastro de usuários com validação de senha
 
-Login e logout de usuários
+Login e logout
 
-Edição de perfil do usuário logado
+Edição do perfil do usuário
 
-Listagem e busca de registros
+CRUD (Criar, Ler, Atualizar, Deletar) de registros associados ao usuário
 
-Controle de acesso para editar/deletar somente os registros do usuário (owner)
+Controle de acesso baseado no usuário logado
 
 ## Tecnologias utilizadas
 
@@ -59,37 +59,37 @@ pip install -r requirements.txt
 
 ```
 4. Execute as migrações para criar o banco de dados
-bash
-Copiar
-Editar
+```bash
 python manage.py migrate
+```
 5. (Opcional) Crie um superusuário
-bash
-Copiar
-Editar
+```bash
 python manage.py createsuperuser
+```
 6. Rode o servidor de desenvolvimento
-bash
-Copiar
-Editar
+```bash
 python manage.py runserver
-7. Acesse no navegador
+```
+8. Acesse no navegador
+```bash
 http://127.0.0.1:8000/
-
-
+```
 
 Estrutura do projeto
-registro/ - app principal
 
-templates/ - arquivos HTML dos templates
+```bash
+registro/            - app principal
 
-forms.py - formulários personalizados
+templates/           - arquivos HTML dos templates
 
-views.py - lógica das páginas
+forms.py             - formulários personalizados
 
-urls.py - rotas do projeto
+views.py             - lógica das páginas
 
-static/ - arquivos CSS, JS e imagens
+urls.py              - rotas do projeto
+
+static/              - arquivos CSS, JS e imagens
+```
 
 Contato
 Felipe Amorim - lipeamorim191@gmail.com
@@ -98,6 +98,7 @@ https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
 
 
 
