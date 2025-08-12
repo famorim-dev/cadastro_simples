@@ -8,6 +8,9 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+# --------------------------
+# CRUD de registros
+# --------------------------
 
 def registrar(request):
     if request.method == 'POST':
@@ -46,7 +49,9 @@ def deletarUsuario(request, id):
     return render(request, 'deletar.html', {'usuario': usuario})
 
 
-#formulario de logins CRIAR, ENTRAR, EDITAR
+# --------------------------
+# Controle de usuários
+# --------------------------
 
 def criarUser(request):
     form = CreateUser()
