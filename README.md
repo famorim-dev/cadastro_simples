@@ -31,51 +31,49 @@ Ambiente virtual (venv)
 Git (se for clonar do repositório)
 
 Passos para rodar
-Clone o repositório:
+### 1. Clone o repositório
 
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
-Crie e ative o ambiente virtual:
+```bash
+git clone https://github.com/famorim-dev/cadastro_simples.git
+cd cadastro_simples
+2. Crie e ative o ambiente virtual
+No Linux/macOS:
 
 bash
 Copiar
 Editar
 python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-Instale as dependências:
+source venv/bin/activate
+No Windows:
 
+bash
+Copiar
+Editar
+python -m venv venv
+venv\Scripts\activate
+3. Instale as dependências
 bash
 Copiar
 Editar
 pip install -r requirements.txt
-Execute as migrações para criar o banco:
-
+4. Execute as migrações para criar o banco de dados
 bash
 Copiar
 Editar
 python manage.py migrate
-Crie um superusuário (opcional):
-
+5. (Opcional) Crie um superusuário
 bash
 Copiar
 Editar
 python manage.py createsuperuser
-Rode o servidor de desenvolvimento:
-
+6. Rode o servidor de desenvolvimento
 bash
 Copiar
 Editar
 python manage.py runserver
-Acesse no navegador:
-
-cpp
-Copiar
-Editar
+7. Acesse no navegador
 http://127.0.0.1:8000/
+```
 
 
 Estrutura do projeto
@@ -98,4 +96,5 @@ https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
 
