@@ -16,10 +16,11 @@
         </a>
 
         <h1 class="Titulo">Usuários</h1>
-
+        {% if valor.owner == user %}
         <a class="editar_user" href="{% url 'editar' valor.id %}">
             Editar usuário
         </a>
+        {% endif %}
     </header>
     
     <div class="main">
@@ -31,10 +32,11 @@
         <p>Email: {{valor.email}}</p>
         <p>Descrição: {{valor.description}}</p>
         <p>Data de Criação: {{valor.data_criacao}}</p>
-
+        {% if valor.owner == user %}
         <a href="{% url 'deletar' valor.id %}" class="btn-deletar">
             Deletar Usuário
         </a>
+        {% endif %}
     </div>
     {% endfor %}
 </body> 

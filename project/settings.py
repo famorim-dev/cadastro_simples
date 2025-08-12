@@ -15,6 +15,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# URL para onde o Django vai redirecionar quem não estiver logado
+LOGIN_URL = 'login'
+
+# Página padrão para redirecionar após login bem-sucedido
+LOGIN_REDIRECT_URL = 'registro'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/

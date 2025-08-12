@@ -16,6 +16,12 @@
             <a href="{% url 'registro' %}" class="url_titulo">
                 <h3 class="Titulo">Sistema de Usuários</h3>
             </a>
+            <a href="{% url 'logout' %}" class="btn-logout">
+                Sair
+            </a>
+            <a href="{% url 'editarPerfil' %}" class="btn-logout">
+                editar Perfil
+            </a>
         </div>
 
         <form action="{% url 'search' %}" method="get" class="form">
@@ -34,7 +40,7 @@
 
         <nav class="nav">
             <a href="">
-                login
+                
             </a>  
             <a href="{% url 'registrar' %}" class="criar_user">
                 <b>Criar Usuário</b>
