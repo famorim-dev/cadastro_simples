@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,69 +8,59 @@
     <link rel="stylesheet" href="{% static 'css/registro.css' %}">
 </head>
 <body>
-    <header class="header">
-        <div class="div_titulo">
-            <img src="{% static "img/logo.png" %}" alt="logo" class="logo">
-
-            <a href="{% url 'registro' %}" class="url_titulo">
+    <div class="layout">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <img src="{% static 'img/logo.png' %}" alt="logo" class="logo">
                 <h3 class="Titulo">Sistema de Usuários</h3>
-            </a>
-            <a href="{% url 'logout' %}" class="btn-logout">
-                Sair
-            </a>
-            <a href="{% url 'editarPerfil' %}" class="btn-logout">
-                editar Perfil
-            </a>
-        </div>
-
-        <form action="{% url 'search' %}" method="get" class="form">
-            <input type="search" name="q" placeholder="Buscar nome..."  id="search" value='{{ request.GET.q }}' class="input">
-            <button type="submit" class="buttons_header">Buscar</button>
-
-            {%if query%}
-            <div class="div_limpar">
-                <a class="limpar" href="{% url 'registro' %}">
-                    voltar
-                </a>
             </div>
-            {% endif %}
-        </form>
-        
 
-        <nav class="nav">
-            <a href="">
+            <nav class="menu">
+                <a href="{% url 'registro' %}" class="menu-item">Home</a>
+                <a href="{% url 'registrar' %}" class="menu-item">Criar Usuário</a>
+                <a href="{% url 'editarPerfil' %}" class="menu-item">Editar Perfil</a>
+                <a href="{% url 'logout' %}" class="menu-item logout">Sair</a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <!-- Barra de busca -->
+            <form action="{% url 'search' %}" method="get" class="form-search">
+                <input type="search" name="q" placeholder="Buscar nome..." id="search" value="{{ request.GET.q }}" class="input-search">
+                <button type="submit" class="btn-search">Buscar</button>
+
+                {% if query %}
+                <div class="div_limpar">
+                    <a class="limpar" href="{% url 'registro' %}">Voltar</a>
+                </div>
+                {% endif %}
+            </form>
+
+            <!-- Lista de usuários -->
+            <div class="container">
+                <div class="list_nome">
+                    <h3 class="name_id">Id</h3>
+                    <h3>Nome</h3>
+                    <h3>Sobrenome</h3>
+                    <h3>Telefone</h3>
+                    <h3>Email</h3>
+                </div>
                 
-            </a>  
-            <a href="{% url 'registrar' %}" class="criar_user">
-                <b>Criar Usuário</b>
-            </a>      
-        </nav>
-
-    </header>
-    <div class="container">
-        <div class="Main">
-            <div class="list_nome">
-                <h3 class="name_id">Id</h3>
-                <h3>Nome</h3>
-                <h3>Sobremome</h3>
-                <h3>Telefone</h3>
-                <h3>Email</h3>
+                {% for valor in registros %}
+                    <li class="list_valor">
+                        <div class="valor_id">
+                            <a href="{% url 'usuario' valor.id %}" class="url_id">{{ valor.id }}</a>
+                        </div>
+                        <div>{{ valor.nome }}</div>
+                        <div>{{ valor.sobrenome }}</div>
+                        <div>{{ valor.telefone }}</div>
+                        <div>{{ valor.email }}</div>
+                    </li>
+                {% endfor %}
             </div>
-            
-            {% for valor in registros %}
-                <li class="list_valor">
-                    <div class="valor_id">
-                        <a href="{% url "usuario" valor.id %}" class="url_id">
-                            {{ valor.id }}
-                        </a>
-                    </div>
-                    <div>{{ valor.nome }}</div>
-                    <div>{{ valor.sobrenome }}</div>
-                    <div>{{ valor.telefone }}</div>
-                    <div>{{ valor.email }}</div>
-                </li>
-            {% endfor %}
-        </div>
-    </div> 
-</body> 
+        </main>
+    </div>
+</body>
 </html>
