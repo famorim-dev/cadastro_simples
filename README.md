@@ -20,7 +20,6 @@ Controle de acesso baseado no usuário logado
 - HTML
 - CSS
 - **SQLite** (durante o desenvolvimento)
-- **PostgreSQL** (para produção)
 
 Como rodar o projeto localmente
 Pré-requisitos
@@ -99,6 +98,7 @@ linkedin - https://www.linkedin.com/in/felipe-amorim-04a6172a5/
 ## Observações
 
 Este projeto tem fins de aprendizado e aprimoramento pessoal. Não se trata de uma aplicação pronta para produção.
+
 
 
 
